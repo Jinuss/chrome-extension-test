@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "modify",
+    "version": "1.0.0.0",
+    "description": "支持修改network",
+    "browser_action": {
+        "default_icon": "icons/icon.png",
+        "default_title": "点击修改网络配置",
+        "default_popup": "popup.html"
+    },
+    "web_accessible_resources": ["inject.js"],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content_script.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "notifications",
+        "webRequest",
+        "webRequestBlocking",
+        "storage"
+    ]
+}
