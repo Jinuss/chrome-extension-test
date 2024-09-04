@@ -8,18 +8,66 @@
 </head>
 <style>
     .container {
-        width: 300px;
-        height: 50px;
+        width: 350px;
+        /* height: 50px; */
+    }
+
+    .formItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+    }
+
+    #btn {
+        color: gray;
+        cursor: not-allowed;
+        font-size: 16px;
+        border: 0;
+        height: 34px;
+        padding: 2px 12px;
+    }
+
+    #btn.active {
+        background-color: #438de8;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    input {
+        width: 70%;
+        padding: 6px 10px;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    input:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    input::placeholder {
+        color: #aaa;
+        font-style: italic;
     }
 </style>
 
 <body>
     <div class="container">
-        <div>popup page</div>
+        <p>MMS自定义API地址：</p>
         <div>
-            <button>保存</button>
+            <p>BASE_URL:</p>
+            <div class="formItem">
+                <input type="text" id="baseURL" placeholder="http://" />
+                <button id="btn">保存</button>
+            </div>
         </div>
     </div>
 </body>
+<script src="popup.js"></script>
 
 </html>
