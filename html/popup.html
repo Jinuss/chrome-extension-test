@@ -54,11 +54,25 @@
         color: #aaa;
         font-style: italic;
     }
+
+    img.active {
+        cursor: pointer;
+        content: url(../icons/reset.png);
+        /* margin-top: 15px; */
+    }
+
+    img {
+        cursor: not-allowed;
+        content: url(../icons/reset2.png);
+    }
 </style>
 
 <body>
     <div class="container">
-        <p>MMS自定义API地址：</p>
+        <div class="formItem">
+            <h3>MMS自定义API地址：</h3>
+            <img id="reset" title="重置">
+        </div>
         <div>
             <p>BASE_URL:</p>
             <div class="formItem">
@@ -66,8 +80,9 @@
                 <button id="btn">保存</button>
             </div>
         </div>
+
     </div>
 </body>
-<script src="popup.js"></script>
+<script src="../js/popup.js"></script>
 
 </html>

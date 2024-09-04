@@ -26,15 +26,22 @@ window.addEventListener('message', function (event) {
         const keys = ['globalVar'];
 
         chrome.storage.local.get(keys, function (result) {
+            console.log("🚀 ~ result:", result)
             // 确保获取的数据存在
             if (chrome.runtime.lastError) {
                 console.error('Error retrieving data:', chrome.runtime.lastError);
                 return;
             }
 
+            const webPageValue = event.data.data;
+
+            //存储最初始的值，用于重置
+            if (result.globalVar == null) {
+                chrome.storage.local.set({ originalValue: webPageValue })
+            }
             // 处理获取的数据
-            if (result.globalVar != event.data.data) {
-                chrome.storage.local.set({ globalVar: event.data.data });
+            if (result.globalVar != webPageValue) {
+                chrome.storage.local.set({ globalVar: webPageValue });
             }
         });
     }

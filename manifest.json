@@ -1,14 +1,14 @@
 {
     "manifest_version": 3,
-    "name": "MMS",
+    "name": "Rewrite api address for MMS",
     "version": "1.0",
     "description": "支持修改网站的API地址和端口",
     "action": {
-        "default_popup": "popup.html",
+        "default_popup": "html/popup.html",
         "default_icon": "icons/icon.png"
     },
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "js/background.js"
     },
     "content_scripts": [
         {
@@ -16,7 +16,7 @@
                 "<all_urls>"
             ],
             "js": [
-                "content_script.js"
+                "js/content_script.js"
             ],
             "run_at": "document_start"
         }
@@ -24,7 +24,6 @@
     "permissions": [
         "activeTab",
         "scripting",
-        "contextMenus",
         "tabs",
         "notifications",
         "webRequest",

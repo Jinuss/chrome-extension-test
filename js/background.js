@@ -5,7 +5,7 @@ console.log("🚀 加载background.js成功")
 
 // background.js
 chrome.runtime.onInstalled.addListener(() => {
-    chrome.storage.local.set({ globalVar: '' });
+    chrome.storage.local.set({ globalVar: null });
 });
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
