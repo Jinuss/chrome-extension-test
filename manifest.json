@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Rewrite api address for MMS",
+    "name": "Env Injector",
     "version": "1.0",
-    "description": "支持修改网站的API地址和端口",
+    "description": "拦截并复写页面 env.js 中定义的 window.__ENV__ 对象",
     "action": {
         "default_popup": "html/popup.html",
         "default_icon": "icons/icon.png"
@@ -11,6 +11,16 @@
         "service_worker": "js/background.js"
     },
     "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "js/env_injector.js"
+            ],
+            "run_at": "document_start",
+            "world": "MAIN"
+        },
         {
             "matches": [
                 "<all_urls>"
@@ -25,9 +35,6 @@
         "activeTab",
         "scripting",
         "tabs",
-        "notifications",
-        "webRequest",
-        "webRequestBlocking",
         "storage"
     ]
 }

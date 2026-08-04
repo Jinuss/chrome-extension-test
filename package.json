@@ -1,0 +1,11 @@
+{
+  "name": "env-injector-extension",
+  "version": "1.0.0",
+  "description": "Chrome Extension: 拦截并复写页面 env.js 中定义的 window.__ENV__ 对象",
+  "private": true,
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "node scripts/build.mjs",
+    "pack": "node scripts/build.mjs"
+  }
+}
